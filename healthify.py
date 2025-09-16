@@ -11,7 +11,7 @@ model=genai.GenerativeModel('gemini-2.5-flash-lite')
 
 
 # Lets create the UI
-st.title(':yellow[Healthify] : :blue[Your Personal Health Assistant]')
+st.title(':yellow[Healthify] : :blue[Your AI-Powered Personal Health & Wellness Assistant]')
 st.markdown('''#### This application will assist you to have a better and healthy life.You can ask your health related questions and get pesonalized advice''')
 
 st.sidebar.header(':blue[Enter Your Details]')
