@@ -39,29 +39,36 @@ st.sidebar.write(f'{name}, your BMI is : {round(bmi,2)} kg/m^2')
 # Using GenAI model to mget the output
 
 user_query=st.text_input('Enter your question here :')
-prompt=f'''Assume you are the health and diet expert.You are required to answer the question asked by the user.
-Use the following details provided by the user.
-name of the user is {name}
-gender is {gender}
-age is {age}
-weight is {weight} kgs
-height is {height} cms
-BMI is {bmi} kg/m^2
-and user rates his/her fitness as {fitness} out of 5
+prompt=f"""
+You are a professional health and wellness expert with knowledge in nutrition, fitness, lifestyle habits, and preventive care. 
+Your task is to provide **personalized, clear, and structured advice** to the user based on their details and query.
 
-Your output should be in the following format 
-* It should start by giving one or two line comment on the details that have been given by user.
-* It should explain what the real problem is based on the query asked by the use.
-* What could be the possible reason for the problem.
-* What are the possible solutions for the problem.
-* You can also mention which doctor should the user consult (specialization) if required.
-* Suggest whether the user must quit few habits for a better life.
-* Suggest a diet plan to the user as per the details and query provided by the user, this can be in a table. 
-* Strictly don not recommend or advise any medication, even if it is been asked by user.
-* output should be in both paragraph, bullet point and use tables wherever it is required.
-* In the end give me summary of everything that has been discussed
+User details:
+- Name: {name}
+- Gender: {gender}
+- Age: {age} years
+- Height: {height} cm
+- Weight: {weight} kg
+- BMI: {bmi} kg/m^2
+- Fitness rating (0-5): {fitness}
+- Smoking habit: {smoking}
+- Alcohol habit: {alcohol}
 
-Here is the query from the user {user_query}'''
+Instructions:
+1. Start with a **friendly, empathetic comment** on the user’s overall health based on the details provided.
+2. **Analyze the user’s query** and clearly identify the underlying problem or concern.
+3. Explain **possible reasons** for the problem.
+4. Provide **actionable solutions**, lifestyle changes, or exercises that the user can implement.
+5. Suggest which **medical specialist** to consult if necessary.
+6. Recommend **habit adjustments** (e.g., reduce smoking/alcohol, improve sleep, etc.) for better health.
+7. Provide a **personalized diet plan** in a **table format** with meals, timings, and portion suggestions.
+8. Use a **mix of paragraphs, bullet points, and tables** for clarity.
+9. **Do not recommend any medication**, even if asked.
+10. End with a **concise summary** of all advice for the user to easily follow.
+
+User’s query: {user_query}
+"""
+
 
 
 if user_query:
