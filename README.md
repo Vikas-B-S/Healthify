@@ -1,5 +1,5 @@
 # Healthify
-This is perosnal health assistant poweredmby Generative AI
+This is perosnal health assistant powered by Generative AI
 
 --- 
 
